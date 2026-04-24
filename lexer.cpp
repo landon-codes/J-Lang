@@ -1,6 +1,8 @@
 ﻿#include <iostream>
 #include <string>
 #include <vector>
+#include <locale>
+#include <codecvt>
 
 using namespace std;
 
@@ -15,6 +17,13 @@ class Token {
         value = tokenValue;
     }
 };
+
+string toUtf8(const u32string& u32str) {
+    // Converts between UTF-32 (char32_t) and UTF-8 (char)
+    wstring_convert<codecvt_utf8<char32_t>, char32_t> converter;
+    return converter.to_bytes(u32str);
+}
+
 
 // Check for both ASCII and Wide-character whitespace
 bool isWhitespace(char32_t c) {
@@ -59,7 +68,7 @@ int main() {
         cout << "Type: " << token.type << endl;
         // Note: Printing u32string to cout requires conversion back to UTF-8
         // For simple debugging, we'll just acknowledge it worked:
-        cout << "Value: [UTF-32 Content Received]" << endl;
+        cout << toUtf8(token.value) << endl;
     }
 
     return 0;
