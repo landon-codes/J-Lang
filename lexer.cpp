@@ -17,6 +17,10 @@ class Token {
     }
 };
 
+bool isWhiteSpace(char c) {
+    return c == ' ' || c == '\t' || c == '\n' || c == '\r' || c == U'\u3000';
+}
+
 int main() {
     Token test("testType", "testValue");
 
