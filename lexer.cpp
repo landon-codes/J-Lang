@@ -36,6 +36,7 @@ vector<Token> tokenize(const u32string& input) {
     const size_t length = input.length();
 
     while (position < length) {
+        // Processes strings
         if (input[position] == U'「') {
             u32string buffer = U"";
             position++; // Skip opening 「
@@ -48,6 +49,11 @@ vector<Token> tokenize(const u32string& input) {
             if (position < length) position++; // Skip closing 」
             tokens.push_back(Token("string", buffer));
         } 
+        else if (input[position] == U'！') {
+            tokens.push_back(Token("function call operator", u32string(1, U'！')));
+            position++;
+        }
+        // Skips whitespace
         else if (isWhitespace(input[position])) {
             position++;
         }
@@ -60,7 +66,7 @@ vector<Token> tokenize(const u32string& input) {
 
 int main() {
     // Prefix with 'U' for UTF-32 literal
-    u32string input = U"「世界よ、こんにちは！」";
+    u32string input = U"「世界よ、こんにちは！」！";
 
     vector<Token> outputTokens = tokenize(input);
 
