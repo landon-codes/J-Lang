@@ -57,8 +57,18 @@ vector<Token> tokenize(const u32string& input) {
         else if (isWhitespace(input[position])) {
             position++;
         }
+        // Multicharacter tokens
         else {
-            position++; // Handle unknown characters to avoid infinite loops
+            u32string buffer = U"";
+            while (position < length && !isWhitespace(input[position])) {
+                buffer += input[position];
+                position++;
+            }
+
+            // NOTE: Later checking for other tokens will be needed.
+            // For now it is fine.
+
+            tokens.push_back(Token("identifier", buffer));
         }
     }
     return tokens;
@@ -66,7 +76,7 @@ vector<Token> tokenize(const u32string& input) {
 
 int main() {
     // Prefix with 'U' for UTF-32 literal
-    u32string input = U"「世界よ、こんにちは！」！";
+    u32string input = U"「世界よ、こんにちは！」！示す";
 
     vector<Token> outputTokens = tokenize(input);
 
