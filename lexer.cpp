@@ -73,19 +73,3 @@ vector<Token> tokenize(const u32string& input) {
     }
     return tokens;
 }
-
-int main() {
-    // Prefix with 'U' for UTF-32 literal
-    u32string input = U"「世界よ、こんにちは！」！示す";
-
-    vector<Token> outputTokens = tokenize(input);
-
-    for (const auto& token : outputTokens) {
-        cout << "Type: " << token.type << endl;
-        // Note: Printing u32string to cout requires conversion back to UTF-8
-        // For simple debugging, we'll just acknowledge it worked:
-        cout << toUtf8(token.value) << endl;
-    }
-
-    return 0;
-}
