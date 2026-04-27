@@ -1,6 +1,5 @@
 #pragma once
 #include "lexer.h"
-#include <iostream>
 #include <vector>
 
 struct PeekResult {
