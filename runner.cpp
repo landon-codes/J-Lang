@@ -1,4 +1,5 @@
 #include "lexer.h"
+#include "coreFunctions.h"
 #include <iostream>
 #include <vector>
 
@@ -21,9 +22,11 @@ PeekResult peek(vector<Token> vec, int position) {
     return result;
 }
 
-void run(vector<Token> tokens) {
+void runProgram(vector<Token> tokens) {
     for (int position = 0; position < tokens.size(); position++) {
         if (tokens[position].type == "string") {
+            u32string text = tokens[position].value;
+
             // Get the next token
             PeekResult after = peek(tokens, position);
 
@@ -47,7 +50,9 @@ void run(vector<Token> tokens) {
                     break;
                 }
 
-                // TODO: Implement function calls
+                if (function.value.value == U"示す") {
+                    示す(text);
+                }
             }
         }
     }

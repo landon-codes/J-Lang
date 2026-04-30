@@ -8,4 +8,4 @@ struct PeekResult {
 };
 
 PeekResult peek(std::vector<Token> vec, int position);
-void run(std::vector<Token> tokens);
+void runProgram(std::vector<Token> tokens);
