@@ -25,12 +25,28 @@ Windows users may need to run `chcp 65001` before using this program, though.
 
 ## Roadmap
 
-1. Simple print statements
+1. Simple print statements *done*
 2. Variables
 3. Math/Numbers
 4. If/Else operations
 
 *This roadmap is subject to change.*
+
+## Languge
+
+JLang is an interperated programming language designed for programming soley in Japanese with a typicall Japanese input keyboard.
+
+### Functions
+
+- **示す**
+示す is the esolang's "print" function. It displays whatever is intered into it in the terminal.
+
+*Example*:
+```jlang
+「世界よ、こんにちは！」！示す
+```
+The Japanese quotes act like any regular quote; they contain strings. The full width exclamation mark is the "function call operator", it is not the same as a regular exclamation mark, which will not be recognized by the interperator. The function call operator is used when calling functions, and marks when to pass arguments into a function.
+The ！ tells the interperator "push the value(s) you just saw into the next function."
 
 ## Contributions
 
