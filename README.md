@@ -25,7 +25,7 @@ Windows users may need to run `chcp 65001` before using this program, though.
 
 ## Roadmap
 
-1. Simple print statements *done*
+1. Simple print statements  *done*
 2. Variables
 3. Math/Numbers
 4. If/Else operations
@@ -34,12 +34,13 @@ Windows users may need to run `chcp 65001` before using this program, though.
 
 ## Languge
 
-JLang is an interperated programming language designed for programming soley in Japanese with a typicall Japanese input keyboard.
+JLang is an interperated programming language designed for programming soley in Japanese with a typical Japanese input keyboard.
 
 ### Functions
 
 - **示す**
-示す is the esolang's "print" function. It displays whatever is intered into it in the terminal.
+
+示す is the esolang's "print" function. It displays whatever is entered into it in the terminal.
 
 *Example*:
 ```jlang
