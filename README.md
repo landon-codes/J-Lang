@@ -12,12 +12,12 @@ So, when there is something that is stable and can be compiled, you will want us
 
 Windows (CL)
 ```
-cl /EHsc /utf-8 FILES -o jlang.exe
+cl /EHsc /utf-8 lexer.cpp coreFunctions.cpp runner.cpp -o jlang.exe
 ```
 
 Linux/Mac (g++)
 ```
-g++ -std=c++17 FILES -o jlang
+g++ main.cpp lexer.cpp coreFunctions.cpp runner.cpp -o jlang
 ```
 
 If you change any files make sure to save them using UTF-8 with BOM to ensure Japanese characters are properly rendered.
